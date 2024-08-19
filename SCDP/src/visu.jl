@@ -11,8 +11,8 @@ function ecrireInst(inst::DonneesSCDP)
    matCoordsCibles = vcat((180coord[na, :]/π for coord in inst.coordsCibles)...)
    printstyled("\n*** Données de l'instance ***\n\n", color = :red)
    printstyled("Coordonnées des $(inst.nbCibles) cibles\n", color =:blue)
-   pretty_table(matCoordsCibles, header = (["Latitude", "Longitude"], ["deg", "deg"]), 
-                row_names = inst.nbCibles ≤ 26 ? alphabet[1:inst.nbCibles] : nothing)
+   pretty_table(matCoordsCibles, header = (["Latitude", "Longitude"], ["deg", "deg"]))#, 
+   #             row_names = inst.nbCibles ≤ 26 ? alphabet[1:inst.nbCibles] : nothing)
    print("Angle d'ouverture : $(180inst.angleOuverture/π) degrés\n")
    print("Instant initial : $(inst.instantInitial)\n")
    print("Nombre de jours de simulation : $(inst.m_simu)\n")
